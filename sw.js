@@ -1,7 +1,9 @@
 // Offline support: the whole app is one HTML file plus icons, cached on install.
 // Navigations try the network first (so updates arrive when online) and fall back to the cache.
-const CACHE = 'ear-training-20261121155416';
-const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png'];
+const CACHE = 'ear-training-20261121183621';
+const ASSETS = ['./', './index.html', './manifest.webmanifest', './icons/icon-192.png', './icons/icon-512.png', './icons/maskable-512.png', './icons/apple-touch-icon.png',
+  './samples/C2.mp3', './samples/Ds2.mp3', './samples/Fs2.mp3', './samples/A2.mp3', './samples/C3.mp3', './samples/Ds3.mp3', './samples/Fs3.mp3', './samples/A3.mp3', './samples/C4.mp3', './samples/Ds4.mp3', './samples/Fs4.mp3', './samples/A4.mp3', './samples/C5.mp3', './samples/Ds5.mp3', './samples/Fs5.mp3', './samples/A5.mp3', './samples/C6.mp3', './samples/Ds6.mp3',
+];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(caches.open(CACHE).then((c) => c.addAll(ASSETS)).then(() => self.skipWaiting()));
